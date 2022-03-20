@@ -1,0 +1,76 @@
+// pagination
+.pagination {
+  margin: 50px auto 0;
+  width: 100%;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-item {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    font-size: 16px;
+    line-height: 40px;
+    color: $green;
+    background-color: $white;
+    border: 1px solid $green2;
+    border-radius: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all .5s ease;
+
+    &:hover {
+      color: $white;
+      background-color: $green2;
+    }
+
+    &.is-active {
+      color: $white;
+      background-color: $green2;
+    }
+  }
+}
+
+
+@include mqMax(1280px) {
+  .pagination {
+    margin: get-vw-desktop(50px) auto 0;
+    width: 100%;
+
+    &-container {}
+
+    &-item {
+      margin: get-vw-desktop(5px);
+      width: get-vw-desktop(40px);
+      height: get-vw-desktop(40px);
+      font-size: get-vw-desktop(16px);
+      line-height: get-vw-desktop(40px);
+      border: get-vw-desktop(1px) solid $green2;
+    }
+  }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+  .pagination {
+    margin: get-vw-mobile(50px) auto 0;
+    width: 100%;
+
+    &-container {}
+
+    &-item {
+      margin: get-vw-mobile(5px);
+      width: get-vw-mobile(40px);
+      height: get-vw-mobile(40px);
+      font-size: get-vw-mobile(16px);
+      line-height: get-vw-mobile(40px);
+      border: get-vw-mobile(1px) solid $green2;
+    }
+  }
+}

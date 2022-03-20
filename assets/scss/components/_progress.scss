@@ -1,0 +1,212 @@
+// Progress
+.progress {
+    position: relative;
+    background-color: $dark-green;
+
+    .container {
+        position: relative;
+    }
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/progress-bg-element-1.png');
+    }
+
+    &__paw-elem {
+        display: inline-block;
+        content: '';
+        width: 794px;
+        height: 809px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/progress-paw.png');
+    }
+
+    &__list {
+        margin: 35px 0 0;
+        @include displayFlex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-radius: 40px;
+        overflow: hidden;
+    }
+
+    &__item {
+        @include displayFlex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 33.33%;
+        height: 250px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(4px);
+        background-color: $opac-white4;
+
+        &-val {
+            margin: 0 0 10px;
+            font-size: 60px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: $white;
+        }
+
+        &-desc {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            color: $white;
+        }
+
+        // Modifiers
+        &--opac {
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $opac-green2;
+            }
+        }
+    }
+
+    &__cta {
+        margin: 50px 0 0;
+        text-align: center;
+
+        .btn {
+            width: 250px;
+        }
+    }
+}
+
+
+@include mqMax(1280px) {
+    .progress {
+    
+        &__paw-elem {
+            display: inline-block;
+            content: '';
+            width: get-vw-desktop(794px);
+            height: get-vw-desktop(809px);
+        }
+    
+        &__list {
+            margin: get-vw-desktop(35px) 0 0;
+            border-radius: get-vw-desktop(40px);
+        }
+    
+        &__item {
+            width: 33.33%;
+            height: get-vw-desktop(250px);
+            -webkit-backdrop-filter: blur(get-vw-desktop(5px));
+            backdrop-filter: blur(get-vw-desktop(4px));
+    
+            &-val {
+                margin: 0 0 get-vw-desktop(10px);
+                font-size: get-vw-desktop(60px);
+                letter-spacing: get-vw-desktop(-1px);
+            }
+    
+            &-desc {
+                font-size: get-vw-desktop(24px);
+                letter-spacing: get-vw-desktop(-0.5px);
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-desktop(50px) 0 0;
+    
+            .btn {
+                width: get-vw-desktop(250px);
+            }
+        }
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .progress {
+    
+        &__paw-elem {
+            display: inline-block;
+            content: '';
+            width: get-vw-mobile(320px);
+            height: get-vw-mobile(326px);
+        }
+    
+        &__list {
+            margin: get-vw-mobile(35px) 0 0;
+            border-radius: get-vw-mobile(40px);
+        }
+    
+        &__item {
+            width: 50%;
+            height: get-vw-mobile(100px);
+            -webkit-backdrop-filter: blur(get-vw-mobile(5px));
+            backdrop-filter: blur(get-vw-mobile(4px));
+    
+            &-val {
+                margin: 0 0 get-vw-mobile(10px);
+                font-size: get-vw-mobile(24px);
+                letter-spacing: get-vw-mobile(-1px);
+            }
+    
+            &-desc {
+                font-size: get-vw-mobile(14px);
+                letter-spacing: get-vw-mobile(-0.5px);
+            }
+
+            &:nth-child(1) {
+                order: 1;
+            }
+
+            &:nth-child(2) {
+                order: 2;
+            }
+
+            &:nth-child(3) {
+                order: 4;
+            }
+
+            &:nth-child(4) {
+                order: 3;
+            }
+
+            &:nth-child(5) {
+                order: 5;
+            }
+
+            &:nth-child(6) {
+                order: 6;
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-mobile(50px) 0 0;
+    
+            .btn {
+                width: get-vw-mobile(250px);
+            }
+        }
+    }
+}

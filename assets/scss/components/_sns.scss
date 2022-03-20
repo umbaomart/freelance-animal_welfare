@@ -1,0 +1,209 @@
+.sns {
+    margin: 50px 0 0;
+    @include displayFlex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__content {
+        font-size: 0;
+        line-height: 0;
+    }
+
+    &__heading {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $green2;
+    }
+
+    &__header {
+        margin: 0 14px 0 0;
+    }
+
+    &__item {
+        position: relative;
+        @include displayFlex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+        display: inline-block;
+        background: rgb(61,223,136);
+        background: linear-gradient(145deg, rgba(61,223,136,1) 0%, rgba(19,142,76,1) 100%);
+        @include transitionOpacity;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:before {
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 29px;
+            height: 24px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &--fb {
+            &:before {
+                background-image: url('./../images/common/sns-fb.svg');
+            }
+        }
+
+        &--ig {
+            &:before {
+                background-image: url('./../images/common/sns-ig.svg');
+            }
+        }
+
+        &--twitter {
+            &:before {
+                background-image: url('./../images/common/sns-twitter.svg');
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin: 0 14px 0 0;
+        }
+    }
+
+    &--footer {
+        flex-direction: column;
+        justify-content: center;
+
+        .sns {    
+            
+            &__header {
+                margin: 0;
+            }
+
+            &__icon {
+                margin: 0 auto;
+                width: 116px;
+            }
+
+            &__heading {
+                margin: 22px auto 0;
+                text-align: center;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: $white;
+            }
+
+            &__content {
+                margin: 22px;
+            }
+        }
+    }
+}
+
+
+@include mqMax(1280px) {
+    .sns {
+        margin: get-vw-desktop(50px) 0 0;
+
+        &__header {
+            margin: 0 get-vw-desktop(14px) 0 0;
+        }
+    
+        &__heading {
+            font-size: get-vw-desktop(20px);
+        }
+    
+        &__item {
+            width: get-vw-desktop(50px);
+            height: get-vw-desktop(50px);
+    
+            &:before {
+                width: get-vw-desktop(29px);
+                height: get-vw-desktop(24px);
+            }
+    
+            &:not(:last-of-type) {
+                margin: 0 get-vw-desktop(14px) 0 0;
+            }
+        }
+
+        &--footer {
+    
+            .sns {
+    
+                &__icon {
+                    width: get-vw-desktop(116px);
+                }
+    
+                &__heading {
+                    margin: get-vw-desktop(22px) auto 0;
+                    font-size: get-vw-desktop(28px);
+                }
+    
+                &__content {
+                    margin: get-vw-desktop(22px) 0 0;
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .sns {
+        margin: get-vw-mobile(50px) 0 0;
+        flex-direction: column;
+
+        &__header {
+            margin: 0 auto;
+        }
+    
+        &__heading {
+            font-size: get-vw-mobile(20px);
+        }
+    
+        &__item {
+            margin: get-vw-mobile(15px) auto 0;
+            width: get-vw-mobile(50px);
+            height: get-vw-mobile(50px);
+    
+            &:before {
+                width: get-vw-mobile(29px);
+                height: get-vw-mobile(24px);
+            }
+    
+            &:not(:last-of-type) {
+                margin: 0 get-vw-mobile(14px) 0 0;
+            }
+        }
+
+        &--footer {
+    
+            .sns {
+    
+                &__icon {
+                    width: get-vw-mobile(116px);
+                }
+    
+                &__heading {
+                    margin: get-vw-mobile(22px) auto 0;
+                    font-size: get-vw-mobile(28px);
+                }
+    
+                &__content {
+                    margin: get-vw-mobile(22px) 0 0;
+                }
+            }
+        }
+    }
+}

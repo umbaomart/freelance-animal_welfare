@@ -1,0 +1,316 @@
+// Artist
+.artist {
+    &__content {
+        margin: 0 auto;
+        padding: 35px 0 50px;
+        width: 980px;
+    }
+
+    &__slide {
+
+        &-kv {
+            img {
+                overflow: hidden;
+                border-radius: 50%;
+                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(100%);
+            }
+        }
+
+        &-info {
+            margin: 20px auto 0;
+            text-align: center;
+        }
+
+        &-name {
+            margin: 0 0 5px;
+            font-size: 24px;
+            line-height: 1.2;
+            color: $white;
+        }
+
+        &-location {
+            font-size: 18px;
+            line-height: 1.2;
+            color: $opac-white3;
+        }
+    }
+
+    .splide {
+
+        &__arrow {
+            background: transparent;
+
+            svg {
+                fill: $white;
+            }
+
+            &--prev {
+                top: 70px;
+                left: -40px;
+            }
+
+            &--next {
+                top: 70px;
+                right: -40px;
+            }
+        }
+
+        &__pagination {
+            display: none;
+            visibility: hidden;
+        }
+
+        &__slide {
+
+            .artist__slide {
+                &-info {
+                    opacity: 0;
+                    visibility: hidden;
+                    @include transitionAll;
+                }
+
+                &-kv {
+                    padding: 20px 40px 20px 0;
+                    @include transitionAll;
+
+                    img {
+                        @include transitionAll;
+                    }
+                }
+            }
+
+            &.is-active {
+                .artist__slide {
+                    &-info {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    &-kv {
+                        padding: 0;
+
+                        img {
+                            border: 6px solid $green2;
+                            -webkit-filter: none; /* Safari 6.0 - 9.0 */
+                            filter: none;
+                        }
+                    }
+                }
+            }
+
+            &.is-next,
+            &.is-next ~ .splide__slide {
+
+                .artist__slide {
+                    &-kv {
+                        padding: 20px 0 20px 40px;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &__cta {
+        margin: 50px auto 0;
+        position: relative;
+        text-align: center;
+
+        &:before {
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $opac-white2;
+            z-index: 1;
+        }
+
+        .btn {
+            position: relative;
+            width: 250px;
+            z-index: 2
+        }
+    }
+
+}
+
+
+@include mqMax(1280px) {
+    .artist {
+        &__content {
+            padding: get-vw-desktop(35px) 0 get-vw-desktop(50px);
+            width: get-vw-desktop(980px);
+        }
+    
+        &__slide {
+    
+            &-info {
+                margin: get-vw-desktop(20px) auto 0;
+            }
+    
+            &-name {
+                margin: 0 0 get-vw-desktop(5px);
+                font-size: get-vw-desktop(24px);
+            }
+    
+            &-location {
+                font-size: get-vw-desktop(18px);
+            }
+        }
+    
+        .splide {
+    
+            &__arrow {
+    
+                &--prev {
+                    top: get-vw-desktop(70px);
+                    left: get-vw-desktop(-40px);
+                }
+    
+                &--next {
+                    top: get-vw-desktop(70px);
+                    right: get-vw-desktop(-40px);
+                }
+            }
+    
+            &__slide {
+    
+                .artist__slide {
+                    &-kv {
+                        padding: get-vw-desktop(20px) get-vw-desktop(40px) get-vw-desktop(20px) 0;
+                    }
+                }
+    
+                &.is-active {
+                    .artist__slide {
+    
+                        &-kv {
+    
+                            img {
+                                border: get-vw-desktop(6px) solid $green2;
+                            }
+                        }
+                    }
+                }
+    
+                &.is-next,
+                &.is-next ~ .splide__slide {
+    
+                    .artist__slide {
+                        &-kv {
+                            padding: get-vw-desktop(20px) 0 get-vw-desktop(20px) get-vw-desktop(40px);
+                        }
+                    }
+                    
+                }
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-desktop(50px) auto 0;
+    
+            &:before {
+                height: get-vw-desktop(1px);
+            }
+    
+            .btn {
+                width: get-vw-desktop(250px);
+            }
+        }
+    
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .artist {
+        &__content {
+            padding: get-vw-mobile(35px) 0 get-vw-mobile(50px);
+            width: 100%;
+        }
+    
+        &__slide {
+    
+            &-info {
+                margin: get-vw-mobile(20px) auto 0;
+            }
+    
+            &-name {
+                margin: 0 0 get-vw-mobile(5px);
+                font-size: get-vw-mobile(24px);
+            }
+    
+            &-location {
+                font-size: get-vw-mobile(18px);
+            }
+        }
+    
+        .splide {
+    
+            &__arrow {
+    
+                &--prev {
+                    top: get-vw-mobile(70px);
+                    left: 0;
+                }
+    
+                &--next {
+                    top: get-vw-mobile(70px);
+                    right: 0;
+                }
+            }
+    
+            &__slide {
+    
+                .artist__slide {
+                    &-kv {
+                        padding: get-vw-mobile(20px) get-vw-mobile(20px) get-vw-mobile(20px) 0;
+                    }
+                }
+    
+                &.is-active {
+                    .artist__slide {
+    
+                        &-kv {
+    
+                            img {
+                                border: get-vw-mobile(6px) solid $green2;
+                            }
+                        }
+                    }
+                }
+    
+                &.is-next,
+                &.is-next ~ .splide__slide {
+    
+                    .artist__slide {
+                        &-kv {
+                            padding: get-vw-mobile(20px) 0 get-vw-mobile(20px) get-vw-mobile(20px);
+                        }
+                    }
+                    
+                }
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-mobile(50px) auto 0;
+    
+            &:before {
+                height: get-vw-mobile(1px);
+            }
+    
+            .btn {
+                width: get-vw-mobile(250px);
+            }
+        }
+    
+    }
+}

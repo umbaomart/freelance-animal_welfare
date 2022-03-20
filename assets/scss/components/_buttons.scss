@@ -1,0 +1,130 @@
+
+.btn {
+    padding: 18px 6px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $white;
+    text-align: center;
+    background: rgb(61,223,136);
+    background: linear-gradient(180deg, rgba(61,223,136,1) 0%, rgba(19,142,76,1) 100%);
+    width: 200px;
+    border: 1px solid $green;
+    border-radius: 10px;
+    @include transitionOpacity;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &--opac-v1 {
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.3) 100%);
+        border-color: $opac-white;
+    }
+
+    &--with-paw {
+        padding: 20px 80px 20px 32px;
+        position: relative;
+
+        &:before {
+            margin: auto;
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            background-color: $opac-white2;
+            top: 0;
+            right: 72px;
+            bottom: 0;
+        }
+
+        &:after {
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 30px;
+            bottom: 0;
+            width: 29px;
+            height: 25px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('./../images/common/btn-paw-icon.svg');
+        }
+    }
+}
+
+@include mqMax(1280px) {
+    .btn {
+        padding: get-vw-desktop(18px) get-vw-desktop(6px);
+        font-size: get-vw-desktop(16px);
+        line-height: get-vw-desktop(22px);
+        background: rgb(61,223,136);
+        background: linear-gradient(180deg, rgba(61,223,136,1) 0%, rgba(19,142,76,1) 100%);
+        width: get-vw-desktop(200px);
+        border: get-vw-desktop(1px) solid $green;
+        border-radius: get-vw-desktop(10px);
+
+        &--opac-v1 {
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.3) 100%);
+            border-color: $opac-white;
+        }
+
+        &--with-paw {
+            padding: get-vw-desktop(20px) get-vw-desktop(80px) get-vw-desktop(20px) get-vw-desktop(32px);
+            
+            &:before {
+                width: get-vw-desktop(1px);
+                height: get-vw-desktop(20px);
+                right: get-vw-desktop(72px);
+            }
+            
+            &:after {
+                right: get-vw-desktop(30px);
+                width: get-vw-desktop(29px);
+                height: get-vw-desktop(25px);
+            }
+        }
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .btn {
+        padding: get-vw-mobile(18px) get-vw-mobile(6px);
+        font-size: get-vw-mobile(16px);
+        line-height: get-vw-mobile(22px);
+        background: rgb(61,223,136);
+        background: linear-gradient(180deg, rgba(61,223,136,1) 0%, rgba(19,142,76,1) 100%);
+        width: get-vw-mobile(200px);
+        border: get-vw-mobile(1px) solid $green;
+        border-radius: get-vw-mobile(10px);
+
+        &--opac-v1 {
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.3) 100%);
+            border-color: $opac-white;
+        }
+
+        &--with-paw {
+            padding: get-vw-mobile(20px) get-vw-mobile(80px) get-vw-mobile(20px) get-vw-mobile(32px);
+            
+            &:before {
+                width: get-vw-mobile(1px);
+                height: get-vw-mobile(20px);
+                right: get-vw-mobile(72px);
+            }
+            
+            &:after {
+                right: get-vw-mobile(30px);
+                width: get-vw-mobile(29px);
+                height: get-vw-mobile(25px);
+            }
+        }
+    }
+}

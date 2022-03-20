@@ -1,0 +1,154 @@
+// orgList
+.orgList {
+  padding-top: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./../images/common/digi-assets-bg-element-1.png');
+
+  &__list {
+    margin: 35px 0 0;
+    padding: 0 0 28px;
+    @include displayFlex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding: 0 0 60px;
+    width: 338px;
+    position: relative;
+
+    &:nth-child(n+4) {
+      margin: 50px 0 0;
+    }
+  }
+
+  &__kv {
+    overflow: hidden;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+    img {
+      border-radius: 50%;
+      border: 6px solid $green;
+      overflow: hidden;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+
+    &-name {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      color: $green3;
+    }
+
+    &-desc {
+      margin: 0 0 2px 0;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+  }
+
+  &__cta {
+    margin: 28px auto 0;
+    text-align: center;
+  }
+}
+
+
+@include mqMax(1280px) {
+  .orgList {
+    &__list {
+      margin: get-vw-desktop(35px) 0 0;
+      padding: 0 0 get-vw-desktop(28px);
+    }
+
+    &__item {
+      padding: 0 0 get-vw-desktop(60px);
+      width: get-vw-desktop(338px);
+
+      &:nth-child(n+4) {
+        margin: get-vw-desktop(50px) 0 0;
+      }
+    }
+
+    &__kv {
+      border-top-left-radius: get-vw-desktop(40px);
+      border-top-right-radius: get-vw-desktop(40px);
+    }
+
+    &__info {
+      &-name {
+        font-size: get-vw-desktop(24px);
+        line-height: get-vw-desktop(28px);
+      }
+
+      &-desc {
+        margin: 0 0 get-vw-desktop(2px) 0;
+        font-size: get-vw-desktop(18px);
+        line-height: get-vw-desktop(28px);
+      }
+    }
+
+    &__cta {
+      margin: get-vw-desktop(28px) auto 0;
+    }
+  }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+  .orgList {
+    &__list {
+      margin: get-vw-mobile(35px) 0 0;
+      padding: 0 0 get-vw-mobile(28px);
+      flex-direction: column;
+    }
+
+    &__item {
+      padding: 0 0 get-vw-mobile(60px);
+      width: 100%;
+
+      &:nth-child(n+4) {
+        margin: initial;
+      }
+
+      &:not(:first-of-type) {
+        margin: get-vw-mobile(25px) 0 0;
+      }
+    }
+
+    &__kv {
+      border-top-left-radius: get-vw-mobile(20px);
+      border-top-right-radius: get-vw-mobile(20px);
+    }
+
+    &__info {
+      margin: get-vw-desktop(20px) auto 0;
+
+      &-name {
+        font-size: get-vw-mobile(24px);
+        line-height: get-vw-mobile(28px);
+      }
+
+      &-desc {
+        margin: 0 0 get-vw-mobile(4px) 0;
+        font-size: get-vw-mobile(18px);
+        line-height: get-vw-mobile(28px);
+      }
+    }
+
+    &__cta {
+      margin: get-vw-mobile(28px) auto 0;
+    }
+  }
+}

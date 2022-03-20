@@ -1,0 +1,16 @@
+// CONTENT
+.content {
+
+}
+
+
+// Desktop
+@include mqMax(1280px) {
+
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+
+}

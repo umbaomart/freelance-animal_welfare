@@ -1,0 +1,163 @@
+// dogList
+.dogList {
+  padding-top: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./../images/common/digi-assets-bg-element-1.png');
+
+  &__list {
+    margin: 35px 0 0;
+    padding: 0 0 28px;
+    @include displayFlex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: 33px;
+    padding: 0 0 60px;
+    width: 338px;
+    position: relative;
+
+    &:nth-child(n+4) {
+      margin: 50px 33px 0 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &__kv {
+    overflow: hidden;
+
+    img {
+      overflow: hidden;
+      border: 6px solid $green;
+      background-color: $green;
+      display: block;
+      transition: all .5s ease;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    display: block;
+
+    &-name {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      color: $green2;
+      text-align: center;
+    }
+
+    &-desc {
+      margin: 0 0 2px 0;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+  }
+
+  &__cta {
+    margin: 28px auto 0;
+    text-align: center;
+  }
+}
+
+
+@include mqMax(1280px) {
+  .dogList {
+    &__list {
+      margin: get-vw-desktop(35px) 0 0;
+      padding: 0 0 get-vw-desktop(28px);
+    }
+
+    &__item {
+      margin-right: get-vw-desktop(33px);
+      padding: 0 0 get-vw-desktop(60px);
+      width: get-vw-desktop(338px);
+
+      &:nth-child(n+4) {
+        margin: get-vw-desktop(50px) get-vw-desktop(33px) 0 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    &__kv {}
+
+    &__info {
+      &-name {
+        margin-bottom: get-vw-desktop(10px);
+        ;
+        font-size: get-vw-desktop(24px);
+        line-height: get-vw-desktop(28px);
+      }
+
+      &-desc {
+        margin: 0 0 get-vw-desktop(2px) 0;
+        font-size: get-vw-desktop(18px);
+        line-height: get-vw-desktop(28px);
+      }
+    }
+
+    &__cta {
+      margin: get-vw-desktop(28px) auto 0;
+    }
+  }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+  .dogList {
+    &__list {
+      margin: get-vw-mobile(35px) 0 0;
+      padding: 0 0 get-vw-mobile(28px);
+      flex-direction: column;
+    }
+
+    &__item {
+      margin-right: 0;
+      padding: 0 0 get-vw-mobile(60px);
+      width: 100%;
+
+      &:nth-child(n+4) {
+        margin: initial;
+      }
+
+      &:not(:first-of-type) {
+        margin: get-vw-mobile(25px) 0 0;
+      }
+    }
+
+    &__kv {}
+
+    &__info {
+      margin: get-vw-desktop(20px) auto 0;
+
+      &-name {
+        margin-bottom: get-vw-mobile(10px);
+        font-size: get-vw-mobile(24px);
+        line-height: get-vw-mobile(28px);
+      }
+
+      &-desc {
+        margin: 0 0 get-vw-mobile(2px) 0;
+        font-size: get-vw-mobile(18px);
+        line-height: get-vw-mobile(28px);
+      }
+    }
+
+    &__cta {
+      margin: get-vw-mobile(28px) auto 0;
+    }
+  }
+}

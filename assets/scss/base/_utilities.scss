@@ -1,0 +1,76 @@
+// UTILITIES
+
+// text alignments
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.text-white {
+    color: $white;
+}
+
+
+// Image alignment
+.img-center {
+    margin: 0 auto;
+    display: block;
+}
+
+
+// Image effects
+.u-zoom {
+    overflow: hidden;
+
+    img, .bg-zoom {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 0.4s cubic-bezier(0.14, 0.79, 0.37, 0.95);
+        transition: 0.4s cubic-bezier(0.14, 0.79, 0.37, 0.95);
+    }
+
+    &:hover {
+        img, .bg-zoom {
+            @include transform(scale(1.08));
+        }
+    }
+}
+
+
+// Misc
+.clearfix::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+
+// LIQUID MOBILE - Utilities
+@include mqMax($mq-max-mobile) {
+    // Display
+    .d-mobile-block {
+        display: block !important;
+    }
+
+    .d-mobile-none {
+        display: none !important;
+    }
+}
+
+
+@include mqMinPc {
+    // Display
+    .d-desktop-block {
+        display: block !important;
+    }
+
+    .d-desktop-none {
+        display: none !important;
+    }
+}

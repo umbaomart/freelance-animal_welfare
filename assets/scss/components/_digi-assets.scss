@@ -1,0 +1,293 @@
+// Digi assets
+.digi-assets {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./../images/common/digi-assets-bg-element-1.png');
+
+    &__list {
+        margin: 35px 0 0;
+        padding: 0 0 28px;
+        @include displayFlex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 0 0 166px;
+        width: 338px;
+        position: relative;
+
+        &:nth-child(n+4) {
+            margin: 50px 0 0;
+        }
+    }
+
+    &__kv {
+        overflow: hidden;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+
+    &__info {
+        padding: 25px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        border-radius: 40px;
+        background: rgb(61,223,136);
+        background: linear-gradient(90deg, rgba(61,223,136,1) 0%, rgba(19,142,76,1) 100%);
+
+        &-top {
+            padding: 0 0 20px;
+            @include displayFlex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-val {
+            @include displayFlex;
+            flex-direction: column;
+        }
+
+        &-id {
+            margin: 0 0 2px 0;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 700;
+            color: $white;
+        }
+
+        &-price {
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 700;
+            color: $light-orange;
+        }
+
+        &-cta {
+            .btn {
+                width: 140px;
+            }
+        }
+
+        &-bottom {
+            padding: 21px 0 0;
+            @include displayFlex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid $opac-white2;
+        }
+
+        &-img {
+            width: 50px;
+            height: 50px;
+            border: 6px solid $white;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        &-user {
+            padding: 0 0 0 15px;
+            width: 228px;
+            @include displayFlex;
+            flex-direction: column;
+        }
+
+        &-label {
+            margin: 0 0 4px;
+            font-size: 14px;
+            line-height: 1.2;
+            color: $opac-white2;
+        }
+
+        &-org {
+            font-size: 16px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: $opac-white3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__cta {
+        margin: 28px 0 0;
+        text-align: center;
+    }
+}
+
+
+@include mqMax(1280px) {
+    .digi-assets {
+        &__list {
+            margin: get-vw-desktop(35px) 0 0;
+            padding: 0 0 get-vw-desktop(28px);
+        }
+    
+        &__item {
+            padding: 0 0 get-vw-desktop(166px);
+            width: get-vw-desktop(338px);
+    
+            &:nth-child(n+4) {
+                margin: get-vw-desktop(50px) 0 0;
+            }
+        }
+    
+        &__kv {
+            border-top-left-radius: get-vw-desktop(40px);
+            border-top-right-radius: get-vw-desktop(40px);
+        }
+    
+        &__info {
+            padding: get-vw-desktop(25px) get-vw-desktop(30px);
+            border-radius: get-vw-desktop(40px);
+    
+            &-top {
+                padding: 0 0 get-vw-desktop(20px);
+            }
+    
+            &-id {
+                margin: 0 0 get-vw-desktop(2px) 0;
+                font-size: get-vw-desktop(18px);
+                line-height: get-vw-desktop(28px);
+            }
+    
+            &-price {
+                font-size: get-vw-desktop(24px);
+                line-height: get-vw-desktop(28px);
+            }
+    
+            &-cta {
+                .btn {
+                    width: get-vw-desktop(140px);
+                }
+            }
+    
+            &-bottom {
+                padding: get-vw-desktop(21px) 0 0;
+                border-top: get-vw-desktop(1px) solid $opac-white2;
+            }
+    
+            &-img {
+                width: get-vw-desktop(50px);
+                height: get-vw-desktop(50px);
+                border: get-vw-desktop(6px) solid $white;
+            }
+    
+            &-user {
+                padding: 0 0 0 get-vw-desktop(15px);
+                width: get-vw-desktop(228px);
+            }
+    
+            &-label {
+                margin: 0 0 get-vw-desktop(4px);
+                font-size: get-vw-desktop(14px);
+            }
+    
+            &-org {
+                font-size: get-vw-desktop(16px);
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-desktop(28px) 0 0;
+        }
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .digi-assets {
+        &__list {
+            margin: get-vw-mobile(35px) 0 0;
+            padding: 0 0 get-vw-mobile(28px);
+            flex-direction: column;
+        }
+    
+        &__item {
+            padding: 0 0 get-vw-mobile(225px);
+            width: 100%;
+    
+            &:nth-child(n+4) {
+                margin: initial;
+            }
+
+            &:not(:first-of-type) {
+                margin: get-vw-mobile(25px) 0 0;
+            }
+        }
+    
+        &__kv {
+            border-top-left-radius: get-vw-mobile(20px);
+            border-top-right-radius: get-vw-mobile(20px);
+        }
+    
+        &__info {
+            padding: get-vw-mobile(20px);
+            border-radius: get-vw-mobile(20px);
+            width: 100%;
+    
+            &-top {
+                padding: 0 0 get-vw-mobile(20px);
+                flex-direction: column;
+            }
+    
+            &-id {
+                margin: 0 0 get-vw-mobile(4px) 0;
+                font-size: get-vw-mobile(18px);
+                line-height: get-vw-mobile(28px);
+                text-align: center;
+            }
+    
+            &-price {
+                font-size: get-vw-mobile(24px);
+                line-height: get-vw-mobile(28px);
+                text-align: center;
+            }
+    
+            &-cta {
+                margin: get-vw-mobile(15px) 0 0;
+                text-align: center;
+
+                .btn {
+                    width: get-vw-mobile(140px);
+                }
+            }
+    
+            &-bottom {
+                padding: get-vw-mobile(21px) 0 0;
+                border-top: get-vw-mobile(1px) solid $opac-white2;
+            }
+    
+            &-img {
+                width: get-vw-mobile(40px);
+                height: get-vw-mobile(40px);
+                border: get-vw-mobile(4px) solid $white;
+            }
+    
+            &-user {
+                padding: 0 0 0 get-vw-mobile(10px);
+                width: get-vw-mobile(210px);
+            }
+    
+            &-label {
+                margin: 0 0 get-vw-mobile(4px);
+                font-size: get-vw-mobile(14px);
+            }
+    
+            &-org {
+                font-size: get-vw-mobile(16px);
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-mobile(28px) 0 0;
+        }
+    }
+}

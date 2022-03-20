@@ -1,0 +1,216 @@
+// MIXIN
+$desktop-vw-viewport: 1280;
+$mobile-vw-viewport: 320;
+
+$mq-max-laptop: 1280px;
+$mq-max-mobile: 768px;
+
+$mq-min-pc-size: 769px;
+$mq-max-sp-size: 768px;
+
+$minW: min-width;
+$maxW: max-width;
+
+//Colors
+$white: #fff;
+$black: #000;
+$black2: #222;
+$green: #37B06E;
+$green2: #14B05C;
+$green3: #6EC22F;
+$dark-green: #0A2D1A;
+$light-orange: #FCDE69;
+$opac-green: rgba(20, 176, 92, 0.3);
+$opac-green2: rgba(110, 194, 47, 0.2);
+$opac-white: rgba(255,255,255, 0.3);
+$opac-white2: rgba(255,255,255, 0.4);
+$opac-white3: rgba(255,255,255, 0.6);
+$opac-white4: rgba(255,255,255, 0.1);
+$opac-white5: rgba(255,255,255, 0.05);
+
+$Nunito: 'Nunito', sans-serif;
+
+// mediaquery for PC
+@mixin mqMinPc($minW:$mq-min-pc-size) {
+  @media print,screen and (min-width: $minW) {
+    @content;
+  }
+}
+
+// mediaquery for SP
+@mixin mqMaxSp($maxW:$mq-max-sp-size) {
+  @media print,screen and (max-width: $maxW) {
+    @content;
+  }
+}
+
+// mediaquery range
+@mixin mqMaxMin($property01,$property02) {
+	@media print,screen and (max-width: $property01) and (min-width: $property02) {
+	  @content;
+	}
+}
+
+// mediaquery Min
+@mixin mqMin($mqMin) {
+  @media print,screen and (min-width: $mqMin) {
+    @content;
+  }
+}
+
+// mediaquery Max
+@mixin mqMax($mqMax) {
+  @media print,screen and (max-width: $mqMax) {
+    @content;
+  }
+}
+
+@mixin letter-spacing($spacing) {
+	letter-spacing: ($spacing / 1000) * 1em;
+}
+
+@mixin transitionAll {
+	transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+}
+
+@mixin transitionOpacity {
+	transition: opacity .2s linear;
+	-webkit-transition: opacity .2s linear;
+	-o-transition: opacity .2s linear;
+}
+
+@mixin transitionColor {
+	transition: color .2s linear;
+	-webkit-transition: color .2s linear;
+	-o-transition: color .2s linear;
+}
+
+@mixin transitionVisibility {
+	transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+	-webkit-transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+	-o-transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+}
+
+@mixin transitionBg {
+	transition: background-color .2s linear, color .2s linear;
+	-webkit-transition: background-color .2s linear, color .2s linear;
+	-o-transition: background-color .2s linear, color .2s linear;
+}
+
+@mixin transitionSlide {
+	transition: all .4s linear;
+	-webkit-transition: all .4s linear;
+	-o-transition: all .4s linear;
+}
+
+@mixin transitionAllThumb {
+	transition: all .25s linear;
+	-webkit-transition: all .25s linear;
+	-o-transition: all .25s linear;
+}
+
+@mixin transitionVisibilityThumb {
+	transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+	-webkit-transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+	-o-transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+}
+
+@mixin transitionAllEase {
+	transition: all .6s ease;
+	-webkit-transition: all .6s ease;
+	-o-transition: all .6s ease;
+}
+
+@mixin displayFlex{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-ms-transform: $property;
+	transform: $property;
+}
+
+@mixin transition($property) {
+	-webkit-transition: $property;
+	-moz-transition: $property;
+	-ms-transition: $property;
+	-o-transition: $property;
+	transition: $property;
+}
+
+
+@mixin background-image($property) {
+	background: url($property) no-repeat;
+}
+
+@mixin gradient01 {
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(252,235,226,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 30%,rgba(252,235,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 30%,rgba(252,235,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fcebe2',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin shadow01 {
+	-webkit-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+	-moz-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+	box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+}
+
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function decimal-floor($number, $digits: 0) {
+    @return decimal-round($number, $digits, floor);
+}
+
+@function get-vw-desktop($font) {
+	$vw-context: $desktop-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function get-vw-mobile($font) {
+	$vw-context: $mobile-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function line-height($lh, $font) {
+	$lh-val : $lh / $font;
+	@return $vw-val;
+}

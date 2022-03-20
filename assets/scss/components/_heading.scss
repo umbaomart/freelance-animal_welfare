@@ -1,0 +1,70 @@
+// Heading
+.heading {
+    font-size: 50px;
+    line-height: 70px;
+    color: $green2;
+    text-align: center;
+    text-shadow: 0 2px 5px $opac-green;
+
+    &--with-paw {
+        padding: 15px 0;
+        position: relative;
+
+        &:before {
+            margin: auto;
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 116px;
+            height: 100px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('./../images/common/green-paw.svg');
+        }
+    }
+
+    &.text-white {
+        color: $white;
+    }
+}
+
+
+@include mqMax(1280px) {
+    .heading {
+        font-size: get-vw-desktop(50px);
+        line-height: get-vw-desktop(70px);
+        text-shadow: 0 get-vw-desktop(2px) get-vw-desktop(5px) $opac-green;
+    
+        &--with-paw {
+            padding: get-vw-desktop(15px) 0;
+    
+            &:before {
+                width: get-vw-desktop(116px);
+                height: get-vw-desktop(100px);
+            }
+        }
+    }
+}
+
+
+// Mobile
+@include mqMax($mq-max-mobile) {
+    .heading {
+        font-size: get-vw-mobile(34px);
+        line-height: 1.2;
+        text-shadow: 0 get-vw-mobile(2px) get-vw-mobile(5px) $opac-green;
+    
+        &--with-paw {
+            padding: get-vw-mobile(15px) 0;
+    
+            &:before {
+                width: get-vw-mobile(116px);
+                height: get-vw-mobile(100px);
+            }
+        }
+    }
+}
