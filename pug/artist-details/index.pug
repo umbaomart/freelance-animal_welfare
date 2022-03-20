@@ -1,0 +1,71 @@
+//- META INFORMATION
+- const page_title = 'artist details'
+- const relativePath = '..'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keyworks'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com/about/'
+- const currentPage = 'artistDetails'
+
+
+//- EXTERNAL LIBRARIES
+- const isJquery = true
+- const isWowEffects = false
+- const isSwiper = false
+- const isBootstrap = false
+
+doctype html
+html(lang="ja")
+    head
+        //- HEAD
+        include ../_inc/_head.pug
+    |
+    |
+    body.topPage#top.artistDetails
+
+        //- HEAD
+        include ../_inc/_siteHeader.pug
+        //- MAIN CONTENT
+        main.siteContent(role="main")
+            section.sec01
+                .inner__cont
+                    .artistDetails__prof
+                        .artistDetails__profFlex
+                            .artistDetails__profKv
+                                img(src=`${relativePath}/assets/images/artist-details/artistDetails_kv01.png`, alt="nft")
+                            .artistDetails__profData
+                                .artistDetails__profDataFlex
+                                    .artistDetails__profDataGroup
+                                        .artistDetails__profDataHead
+                                            p.artistDetails__profDataLabel Designer's name
+                                            p.artistDetails__profDataName Abcdefg hijklmn
+                                        .artistDetails__profDataBody
+                                            p.artistDetails__profDataIntro Introductory of the designer
+                                            p.artistDetails__profDataText
+                                                | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
+                                    .artistDetails__profDataFooter
+                                        .artistDetails__profDataFooterFlex
+                                            p.artistDetails__profDataCreation Number of NFT art creation
+                                            p.artistDetails__profDataPrice 0,000
+                                        a.artistDetails__profDataDetail(href="#") detailed link
+                    |
+                    |
+                    .artistDetails__inner
+                        .artistDetails__title
+                            figure.artistDetails__titleKv
+                                img(src=`${relativePath}/assets/images/artist-details/artistDetails.png`, alt="nft")
+                            .artistDetails__titleDesc
+                                img.artistDetails__titleDescKv(src=`${relativePath}/assets/images/artist-details/artistDetails_kv02.png`, alt="nft")
+                        .artistDetails__wrapper
+                            .artistDetails__border.u-top
+                            .artistDetails__list
+                                - for (var x = 0; x < 7; x++)
+                                    .artistDetails__listItem
+                                        img(src=`${relativePath}/assets/images/artist-details/artistDetails_kv03.png`, alt="nft")
+                                .artistDetails__listItem
+                                    img(src=`${relativePath}/assets/images/artist-details/artistDetails_kv04.png`, alt="Coming Soon")
+                            .artistDetails__border.u-bot
+                            figure.artistDetails__footPrint
+                                img(src=`${relativePath}/assets/images/artist-details/artistDetailsbg02.png`, alt="nft")
+        //- HEAD
+        include ../_inc/_siteFooter.pug

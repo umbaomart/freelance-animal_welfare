@@ -1,0 +1,80 @@
+//- META INFORMATION
+- const page_title = 'artist-archive'
+- const relativePath = '..'
+- const meta_title = 'this is meta title'
+- const meta_keywords = 'this is meta keyworks'
+- const meta_description = 'this is meta description'
+- const meta_og_url = 'http://website.com/about/'
+- const currentPage = 'nftArtSingle'
+
+
+//- EXTERNAL LIBRARIES
+- const isJquery = true
+- const isWowEffects = false
+- const isSwiper = false
+- const isBootstrap = false
+
+
+doctype html
+html(lang="ja")
+    head
+        //- HEAD
+        include ../_inc/_head.pug
+    |
+    |
+    body.nftArtSingle
+        //- MAIN CONTENT
+        main.siteContent(role="main")
+            section.sec01
+                .inner__cont
+                    .nftArtSingle__prof
+                        .nftArtSingle__profFlex
+                            .nftArtSingle__profKv
+                                img(src=`${relativePath}/_assets/images/nft-artSingle/nft-artSingle_kv01.png`, alt="nft")
+                            .nftArtSingle__profData
+                                .nftArtSingle__profDataGroup
+                                    .nftArtSingle__profDataHead
+                                        p.nftArtSingle__profDataTitle Designer's name
+                                        p.nftArtSingle__profDataName Abcdefg hijklmn
+                                    .nftArtSingle__profDataBody
+                                        .nftArtSingle__profDataFlex
+                                            p.nftArtSingle__profDataLabel Artist
+                                            p.nftArtSingle__profDataText アーティストの名前
+                                        .nftArtSingle__profDataFlex
+                                            p.nftArtSingle__profDataLabel 保護団体
+                                            p.nftArtSingle__profDataText 〇〇〇〇〇〇〇団体
+                                        .nftArtSingle__profDataWrapper.u-withThumb
+                                            .nftArtSingle__profDataInner
+                                                .nftArtSingle__profDataFlex
+                                                    p.nftArtSingle__profDataLabel Dog #
+                                                    p.nftArtSingle__profDataText 09999
+                                                .nftArtSingle__profDataFlex
+                                                    p.nftArtSingle__profDataLabel.u-w100 販売開始日
+                                                    p.nftArtSingle__profDataText.u-w100 0000.00.00
+                                            .nftArtSingle__profDataThumb
+                                                img(src=`${relativePath}/_assets/images/nft-artSingle/nft-artSingle_kv02.png`, alt="nft")
+                                                .nftArtSingle__profDataThumbTag
+                                                    img(src=`${relativePath}/_assets/images/nft-artSingle/nft-artSingle_tag.png`, alt="nft")
+                        .nftArtSingle__profDataFooter
+                            a.nftArt__profDataLink(href="#")
+                                .nftArt__profDataLinkFlex
+                                    p.nftArt__profDataLinkPrice 価格
+                                    p.nftArt__profDataLinkVal 000,000
+                                    p.nftArt__profDataLinkCoin ETH
+                            .nftArtSingle__profDataFooterWrapper
+                                .nftArt__profDataLinkPrev
+                                    p.nftArt__profDataLinkPrevLabel NFTの販売アドレス
+                                    a.nftArt__profDataLinkPrevUrl(href="#") （URL）https://aaaaaaaaaa/aaaaaaaaaa5aaaaaaaa4aaaaa
+
+                                .nftArtSingle__profDataDesc
+                                    p.nftArtSingle__profDataDescTitle アートの検索方法
+                                    ul.nftArtSingle__profDataList
+                                        li.nftArtSingle__profDataListItem
+                                            | ああああああああああああああああああああああああああああああああ
+                                        li.nftArtSingle__profDataListItem
+                                            | ああああああああああああああああああああああああああああああああ
+                                        li.nftArtSingle__profDataListItem
+                                            | ああああああああああああああああああああああああああああああああ
+                                    //- ●
+                        .nftArtSingle__footPrint
+                            img(src=`${relativePath}/_assets/images/nft-artSingle/nft-art_bg02.png`, alt="nft")

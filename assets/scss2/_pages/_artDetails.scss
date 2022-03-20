@@ -1,0 +1,371 @@
+/*====================================================================
+nftArtSingle
+====================================================================*/
+.nftArtSingle {
+  background: url('./../images/nft-art/nft-art_bg01.jpg') no-repeat center/cover;
+}
+
+.sec01 {
+
+  .nftArtSingle & {
+    // height: 100vh;
+    // min-height: 65rem;
+    padding: 10.5rem 0;
+
+    @include u-mqMax {
+      padding: 7rem 4.6875vw;
+    }
+  }
+}
+
+.inner__cont {
+  width: 100%;
+  max-width: 108rem;
+  margin: 0 auto;
+}
+
+.nftArtSingle__prof {
+  background: $white;
+  padding: 4.5rem 4rem;
+  border-radius: 4.5rem;
+  position: relative;
+  overflow: hidden;
+
+  @include u-mqMax {
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+}
+
+.nftArtSingle__profFlex {
+  @include u-flex($fd: row, $fw: nowrap, $jc: flex-start, $ai: stretch);
+
+  @include u-mqMax {
+    display: block;
+  }
+}
+
+.nftArtSingle__profKv {
+  width: 49rem;
+  overflow: hidden;
+  border-radius: 4rem;
+
+  @include u-mqMax {
+    width: 100%;
+    border-radius: 2rem;
+  }
+}
+
+.nftArtSingle__profData {
+  flex: 1;
+  margin-left: 6rem;
+
+  @include u-mqMax {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+}
+
+.nftArtSingle__profDataFlex {
+  @include u-flex($fd: row, $fw: wrap, $jc: flex-start, $ai: flex-end);
+  border-bottom: .2rem dashed $green;
+  margin-top: 3rem;
+  padding-left: .8rem;
+
+  @include u-mqMax {
+    padding: 0;
+  }
+
+  // &:not(:first-child) {
+  // }
+
+  .u-withThumb & {
+    margin-top: 0;
+
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.nftArtSingle__profDataWrapper {
+  @include u-flex($fd: row, $fw: nowrap, $jc: flex-start, $ai: flex-start);
+  margin-top: 3rem;
+}
+
+.nftArtSingle__profDataInner {
+  width: 20.5rem;
+}
+
+.nftArtSingle__profDataGroup {}
+
+.nftArtSingle__profDataHead {}
+
+.nftArtSingle__profDataBody {
+  margin-top: 6rem;
+}
+
+.nftArtSingle__profDataTitle {
+  font-size: $text24;
+  color: $green;
+  line-height: 1.2;
+  letter-spacing: .1em;
+  margin-bottom: 1rem;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+}
+
+.nftArtSingle__profDataName {
+  font-weight: 500;
+  font-size: $text52;
+  color: $orange;
+  line-height: 1.2;
+  letter-spacing: .04em;
+
+  @include u-mqMax {
+    font-size: 3.5rem;
+  }
+}
+
+.nftArtSingle__profDataBody {
+  margin-top: 2.5rem;
+}
+
+.nftArtSingle__profDataLabel {
+  font-size: $text24;
+  letter-spacing: .06em;
+  color: $green;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+
+  &.u-w100 {
+    width: 100%;
+  }
+}
+
+.nftArtSingle__profDataText {
+  font-size: $text28;
+  color: $textGray;
+  letter-spacing: .06em;
+  flex: 1;
+  text-align: right;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 2rem;
+  }
+
+  &.u-w100 {
+    width: 100%;
+  }
+}
+
+.nftArtSingle__profDataWrapper {}
+
+.nftArtSingle__profDataLabel {}
+
+.nftArtSingle__profDataText {}
+
+.nftArtSingle__profDataThumb {
+  width: 18.2rem;
+  border-radius: 4rem;
+  margin-left: 6rem;
+  position: relative;
+
+  @include u-mqMax {
+    margin-left: 4rem;
+  }
+}
+
+.nftArtSingle__profDataThumbTag {
+  position: absolute;
+  right: -1rem;
+  bottom: -2.8rem;
+  width: 21.7rem;
+
+  @include u-mqMax {
+    bottom: -3rem;
+    width: 16.7rem;
+  }
+}
+
+.nftArtSingle__profDataFooter {
+  margin-top: 4rem;
+}
+
+.nftArt__profDataLink {
+  width: 100%;
+  background: $orange;
+  @include u-trs;
+  display: block;
+  height: 9rem;
+  border-radius: 2rem;
+  @include u-flex($fd: row, $fw: nowrap, $jc: center, $ai: center);
+  color: $white;
+  // padding: .5rem;
+
+  @include u-mqMax {
+    height: auto;
+    padding: 1rem;
+    border-radius: 1.5;
+  }
+
+  &:hover {
+    color: $white;
+    opacity: .8;
+  }
+}
+
+.nftArt__profDataLinkFlex {
+  // @include u-flex($fd: row, $fw: nowrap, $jc: center, $ai: flex-end);
+}
+
+.nftArt__profDataLinkPrice,
+.nftArt__profDataLinkVal,
+.nftArt__profDataLinkCoin {
+  font-weight: bold;
+  letter-spacing: .06em;
+  display: inline-block;
+  line-height: .7;
+}
+
+.nftArt__profDataLinkPrice {
+  font-size: $text33;
+  color: $white;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+}
+
+.nftArt__profDataLinkVal {
+  font-size: $text75;
+  color: $white;
+
+  @include u-mqMax {
+    font-size: 3.5rem;
+  }
+}
+
+.nftArt__profDataLinkCoin {
+  font-size: $text39;
+  color: $white;
+
+  @include u-mqMax {
+    font-size: 2.2rem;
+  }
+}
+
+.nftArtSingle__profDataFooterWrapper {
+  padding: 2rem;
+
+  @include u-mqMax {
+    padding: 2rem 1rem;
+  }
+}
+
+.nftArt__profDataLinkPrev {
+  // @include u-flex($fd: row, $fw: nowrap, $jc: flex-start, $ai: flex-start);
+}
+
+.nftArt__profDataLinkPrevLabel,
+.nftArt__profDataLinkPrevUrl {
+  font-size: 2.4rem;
+  letter-spacing: .05em;
+  color: $textGray;
+  font-weight: 500;
+  display: inline-block;
+
+  @include u-mqMax {
+    font-size: 1.8rem
+  }
+}
+
+.nftArt__profDataLinkPrevLabel {}
+
+.nftArt__profDataLinkPrevUrl {
+  @include u-trs;
+  word-break: break-all;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: .8;
+  }
+}
+
+.nftArtSingle__profDataDesc {
+  margin-top: 5.5rem;
+
+  @include u-mqMax {
+    margin-top: 3.5rem;
+  }
+}
+
+.nftArtSingle__profDataDescTitle {
+  font-size: $text32;
+  color: $green;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+
+  @include u-mqMax {
+    margin-bottom: 1.5rem;
+  }
+
+  @include u-mqMax {
+    font-size: 2.2rem;
+  }
+}
+
+.nftArtSingle__profDataList {
+  list-style: none;
+  padding: 0;
+}
+
+.nftArtSingle__profDataListItem {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 2.5rem;
+  color: $textGray;
+  letter-spacing: .1em;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+
+  &:before {
+    content: '●';
+    font-size: 1.8rem;
+    color: $textGray;
+    position: absolute;
+    left: 0;
+    top: .3rem;
+
+    @include u-mqMax {
+      font-size: 1.3rem;
+      top: .5rem;
+    }
+  }
+}
+
+.nftArtSingle__profDataListItem {}
+
+.nftArtSingle__profDataListItem {}
+
+.nftArtSingle__footPrint {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 34.3rem;
+  opacity: .5;
+
+  @include u-mqMax {
+    width: 100%;
+  }
+}

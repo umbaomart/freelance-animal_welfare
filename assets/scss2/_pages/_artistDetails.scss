@@ -1,0 +1,323 @@
+/*====================================================================
+artistDetails
+====================================================================*/
+.sec01 {
+
+  .artistDetails & {
+    background: url('./../images/artist-details/artistDetails_bg01.jpg') no-repeat center/cover;
+    padding: 10.5rem 0;
+
+    @include u-mqMax {
+      padding: 7rem 4.6875vw;
+    }
+  }
+}
+
+.inner__cont {
+  .artistDetails & {
+    width: 100%;
+    max-width: 108rem;
+    margin: 0 auto;
+    border-radius: 4.5rem;
+    padding: 4.5rem 0;
+    background: $white;
+
+    @include u-mqMax {
+      border-radius: 2rem;
+      padding: 2rem 0;
+    }
+  }
+}
+
+.artistDetails__prof {}
+
+.artistDetails__profFlex {
+  @include u-flex($fd: row, $fw: nowrap, $jc: flex-start, $ai: stretch);
+  padding: 0 4.5rem;
+
+  @include u-mqMax {
+    padding: 0 2rem;
+    display: block;
+  }
+}
+
+.artistDetails__profKv {
+  width: 49rem;
+  overflow: hidden;
+  border-radius: 4rem;
+  // background: url('./../images/artist-details/artistDetails_kv01.png') no-repeat center/cover;
+
+  @include u-mqMax {
+    // width: 38.2rem;
+    // height: 38.2rem;
+    width: 100%;
+    border-radius: 2rem;
+  }
+}
+
+.artistDetails__profData {
+  flex: 1;
+  margin-left: 6rem;
+
+  @include u-mqMax {
+    margin-left: 0;
+  }
+}
+
+.artistDetails__profDataFooterFlex {
+  @include u-flex($fd: row, $fw: nowrap, $jc: space-between, $ai: center);
+  border-bottom: .2rem dashed $green;
+  margin-bottom: 1.5rem;
+
+  @include u-mqMax {
+    display: block;
+    border-bottom: .1rem dashed $green;
+  }
+}
+
+.artistDetails__profDataGroup {
+  @include u-flex($fd: column, $fw: nowrap, $jc: space-between, $ai: stretch);
+
+  @include u-mqMax {
+    margin-top: 2.5rem;
+  }
+}
+
+.artistDetails__profDataHead {}
+
+.artistDetails__profDataLabel {
+  font-size: $text24;
+  color: $green;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+}
+
+.artistDetails__profDataName {
+  font-size: $text52;
+  line-height: 1.2;
+  color: $orange;
+  letter-spacing: .03em;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 3.5rem;
+  }
+}
+
+.artistDetails__profDataBody {
+  border-bottom: .2rem dashed $green;
+  margin-top: 4em;
+
+  @include u-mqMax {
+    margin-top: 2.5rem;
+    border-bottom: .1rem dashed $green;
+  }
+}
+
+.artistDetails__profDataIntro {
+  font-size: $text24;
+  color: $green;
+  margin-bottom: 1rem;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+}
+
+.artistDetails__profDataText {
+  color: $textGray;
+  font-size: $text28;
+  line-height: 1.8;
+  padding: 0 .5rem;
+  letter-spacing: .04em;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 2rem;
+  }
+}
+
+.artistDetails__profDataFooter {
+  @include u-mqMax {
+    margin-top: 2.5rem;
+  }
+}
+
+.artistDetails__profDataFlex {
+  @include u-flex($fd: column, $fw: nowrap, $jc: space-between, $ai: stretch);
+  height: 100%;
+  padding: 0 .5rem;
+
+  @include u-mqMax {
+    display: block;
+  }
+}
+
+.artistDetails__profDataCreation {
+  color: $green;
+  font-size: $text24;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+    letter-spacing: normal;
+  }
+}
+
+.artistDetails__profDataPrice {
+  color: $orange;
+  font-size: $text35;
+  line-height: 1.2;
+  font-weight: 500;
+
+  @include u-mqMax {
+    font-size: 2.5rem;
+  }
+}
+
+.artistDetails__profDataDetail {
+  width: 100%;
+  font-size: $text20;
+  color: $orange;
+  line-height: 1.2;
+  background: $orange;
+  width: 100%;
+  display: block;
+  border: .2rem solid $orange;
+  text-align: center;
+  padding: 1rem;
+  color: $white;
+  @include u-trs;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  height: 5rem;
+  font-weight: 500;
+  @include u-flex($fd: row, $fw: nowrap, $jc: center, $ai: center);
+
+  @include u-mqMax {
+    font-size: 1.8rem;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.artistDetails__inner {}
+
+.artistDetails__title {
+  margin: 6rem 4.5rem 0;
+  @include u-flex($fd: row, $fw: nowrap, $jc: flex-start, $ai: stretch);
+
+  @include u-mqMax {
+    margin: 7rem 1.5rem 0;
+    position: relative;
+  }
+
+}
+
+.artistDetails__titleKv {
+  width: 32.5rem;
+  margin: 0;
+
+  @include u-mqMax {
+    width: 20rem;
+  }
+}
+
+.artistDetails__titleDesc {
+  width: 40rem;
+  margin-left: 2rem;
+  position: relative;
+  margin-top: -.8rem;
+
+  @include u-mqMax {
+    position: absolute;
+    margin-top: 0;
+    top: -3rem;
+    width: 25rem;
+    right: 0;
+    margin: 0;
+  }
+}
+
+// .artistDetails__titleDescText {}
+
+.artistDetails__wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.artistDetails__border {
+  height: 2.2rem;
+  width: 100%;
+
+  @include u-mqMax {
+    height: 1.7rem;
+  }
+}
+
+.artistDetails__border.u-top {
+  background: url('./../images/nft-art/border-top.png') no-repeat center/cover;
+}
+
+.artistDetails__list {
+  @include u-flex($fd: row, $fw: wrap, $jc: space-between, $ai: stretch);
+  padding: 3rem 4.5rem;
+  position: relative;
+  z-index: 2;
+
+  @include u-mqMax {
+    padding: 3rem;
+  }
+}
+
+.artistDetails__listItem {
+  width: 22rem;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  @include u-mqMax {
+    margin: 2.5rem auto 0;
+  }
+
+  &:not(:first-child) {
+    // margin-left: 3.8rem;
+
+  }
+
+  &:nth-child(n+5) {
+    margin: 3rem 0 0;
+
+    @include u-mqMax {
+      margin: 2.5rem auto 0;
+    }
+  }
+}
+
+.artistDetails__border.u-bot {
+  background: url('./../images/nft-art/border-bot.png') no-repeat center/cover;
+  ;
+}
+
+.artistDetails__footPrint {
+  position: absolute;
+  right: -1.7rem;
+  bottom: -1.7rem;
+  width: 34.3rem;
+
+  @include u-mqMax {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+}
